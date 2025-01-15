@@ -53,9 +53,21 @@ PrefabInstance:
       value: pin-frog
       objectReference: {fileID: 0}
     - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.x
+      value: 4.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.y
+      value: 9.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6549119926207283090, guid: 19a898eee4ec095418e6c436618ebda8, type: 3}
+      objectReference: {fileID: -6549119926207283090, guid: c58b93ceddfea804eb7adfcb96a322db, type: 3}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

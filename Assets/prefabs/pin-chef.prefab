@@ -53,9 +53,21 @@ PrefabInstance:
       value: pin-chef
       objectReference: {fileID: 0}
     - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.y
+      value: 9.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3611580693695465292, guid: eabb47e8dc4342e47ae902ded7d7264a, type: 3}
+      objectReference: {fileID: -3611580693695465292, guid: f05e0ef7fa28d5a42be591d80ef140b2, type: 3}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

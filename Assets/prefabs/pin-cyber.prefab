@@ -53,9 +53,21 @@ PrefabInstance:
       value: pin-cyber
       objectReference: {fileID: 0}
     - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.x
+      value: 2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_Size.y
+      value: 9.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5269267252506627341, guid: 960ba4f96a652604983de7a5cedd8126, type: 3}
+      objectReference: {fileID: 5269267252506627341, guid: 24152f1d9ca900c45a58844f52c57f1b, type: 3}
+    - target: {fileID: 8800249996855207058, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
