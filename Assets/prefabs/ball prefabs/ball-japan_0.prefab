@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4393568174111766749}
   - component: {fileID: 9151040737267626851}
   - component: {fileID: 129968847022219086}
+  - component: {fileID: 4825175824929725008}
   m_Layer: 0
   m_Name: ball-japan_0
   m_TagString: Untagged
@@ -110,3 +111,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4825175824929725008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496044310954182788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb297fe0def9f64f93ebbc223cb08b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
