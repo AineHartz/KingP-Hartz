@@ -15,7 +15,7 @@ public class BallBehavior : MonoBehaviour
     public int secondsToMaxSpeed;
 
     //launch variables
-    public gameObject target;
+    public GameObject target;
     public float minLaunchSpeed;
     public float maxLaunchSpeed;
     public float minTimeToLaunch;
@@ -24,6 +24,7 @@ public class BallBehavior : MonoBehaviour
     public bool launching;
     public float launchDuration;
     public float timeLastLaunch;
+    public float timeLaunchStart;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,13 +39,38 @@ public class BallBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(launching == false && onCooldown() == false)
+        {
+            launch();
+        }
+
         //go to object attached to script, get the transform component, look at it's position
         Vector2 currentPosition = gameObject.GetComponent<Transform>().position;    
         float distance = Vector2.Distance(targetPosition, currentPosition);
 
         if(distance > 0.1)
         {
-            float currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, getDifficultyPercentage());
+            float currentSpeed;
+
+            if(launching == true)
+            {
+                float launchingForHowLong = Time.time - timeLaunchStart;
+
+                if(launchingForHowLong > launchDuration)
+                {
+                    startCooldown();
+                }
+
+                currentSpeed = Mathf.Lerp(minLaunchSpeed, maxLaunchSpeed, getDifficultyPercentage());
+            }
+
+            else
+            {
+                currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, getDifficultyPercentage());
+            }
+            
+
             //This line says how much time has passed since the last check, so that framerate doesn't make things run faster. deltaTime might be 0.2 with an fps of 50 and 0.1 with an fps of 100, so it's equalized.
             currentSpeed = currentSpeed * Time.deltaTime;
             Vector2 newPosition = Vector2.MoveTowards(currentPosition, targetPosition, currentSpeed);
@@ -53,11 +79,30 @@ public class BallBehavior : MonoBehaviour
 
         else
         {
+            if(launching == true)
+            {
+                launching = false;
+                startCooldown();
+            }
+
             targetPosition = getRandomPosition();
         }
 
-        getRandomPosition();
+        float timeLaunching = Time.time - timeLastLaunch;
+
+        if(timeLaunching > launchDuration)
+        {
+            startCooldown();
+        }
+
+        else
+        {
+           launch();
+        }
     }
+
+
+
 
     Vector2 getRandomPosition()
     {
@@ -78,6 +123,33 @@ public class BallBehavior : MonoBehaviour
 
     private void launch()
     {
-        return;
+        targetPosition = target.transform.position;
+
+        if (launching == false)
+        {
+            timeLastLaunch = Time.time;
+            launching = true;
+        }
+    }
+
+    public bool onCooldown()
+    {
+        bool result = false;
+
+        //subtracts the time of the last launch from the concept of time itself to get your actual time!
+        timeLastLaunch = Time.time - timeLastLaunch;
+
+        if(timeLastLaunch < cooldown)
+        {
+            result = true;
+        }
+
+        return result;
+    }
+
+    public void startCooldown()
+    {
+        timeLaunchStart = Time.time;
+        launching = false;
     }
 }
