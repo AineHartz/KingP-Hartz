@@ -34,24 +34,19 @@ public class BallBehavior : MonoBehaviour
         //minSpeed = 0.001f;
         //maxSpeed = 0.75f;
         targetPosition = getRandomPosition();
+        startCooldown();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(launching == false && onCooldown() == false)
-        {
-            launch();
-        }
-
         //go to object attached to script, get the transform component, look at it's position
         Vector2 currentPosition = gameObject.GetComponent<Transform>().position;    
         float distance = Vector2.Distance(targetPosition, currentPosition);
 
-        if(distance > 0.1)
+        if (distance > 0.1)
         {
-            float currentSpeed;
+            float currentSpeed = 0f;
 
             if(launching == true)
             {
@@ -62,7 +57,10 @@ public class BallBehavior : MonoBehaviour
                     startCooldown();
                 }
 
-                currentSpeed = Mathf.Lerp(minLaunchSpeed, maxLaunchSpeed, getDifficultyPercentage());
+                else
+                {
+                    currentSpeed = Mathf.Lerp(minLaunchSpeed, maxLaunchSpeed, getDifficultyPercentage());
+                }
             }
 
             else
@@ -79,30 +77,21 @@ public class BallBehavior : MonoBehaviour
 
         else
         {
-            if(launching == true)
-            {
-                launching = false;
-                startCooldown();
-            }
-
             targetPosition = getRandomPosition();
         }
 
-        float timeLaunching = Time.time - timeLastLaunch;
+        float timeLaunching = Time.time - timeLaunchStart;
 
-        if(timeLaunching > launchDuration)
+        if (launching == true && timeLaunching > launchDuration)
         {
             startCooldown();
         }
 
-        else
+        if (launching == true && onCooldown() == false)
         {
-           launch();
+            launch();
         }
     }
-
-
-
 
     Vector2 getRandomPosition()
     {
@@ -123,11 +112,10 @@ public class BallBehavior : MonoBehaviour
 
     private void launch()
     {
-        targetPosition = target.transform.position;
-
         if (launching == false)
         {
-            timeLastLaunch = Time.time;
+            targetPosition = target.transform.position;
+            timeLaunchStart = Time.time;
             launching = true;
         }
     }
@@ -139,7 +127,7 @@ public class BallBehavior : MonoBehaviour
         //subtracts the time of the last launch from the concept of time itself to get your actual time!
         timeLastLaunch = Time.time - timeLastLaunch;
 
-        if(timeLastLaunch < cooldown)
+        if (timeLastLaunch < cooldown)
         {
             result = true;
         }
@@ -149,7 +137,7 @@ public class BallBehavior : MonoBehaviour
 
     public void startCooldown()
     {
-        timeLaunchStart = Time.time;
+        timeLastLaunch = Time.time;
         launching = false;
     }
 }
