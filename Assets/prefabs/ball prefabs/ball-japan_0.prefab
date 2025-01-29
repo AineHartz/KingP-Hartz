@@ -131,11 +131,11 @@ MonoBehaviour:
   maxSpeed: 5
   secondsToMaxSpeed: 30
   target: {fileID: 0}
-  minLaunchSpeed: 2
-  maxLaunchSpeed: 10
+  minLaunchSpeed: 3
+  maxLaunchSpeed: 15
   minTimeToLaunch: 1
   maxTimeToLaunch: 3
-  cooldown: 10
+  cooldown: 5
   launching: 0
   launchDuration: 2
   timeLastLaunch: 0
