@@ -26,6 +26,9 @@ public class BallBehavior : MonoBehaviour
     public float timeLastLaunch;
     public float timeLaunchStart;
 
+    //physics
+    Rigidbody2D body;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,15 +39,14 @@ public class BallBehavior : MonoBehaviour
         targetPosition = getRandomPosition();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        if(onCooldown() == false)
+        if (onCooldown() == false)
         {
-            if(launching == true)
+            if (launching == true)
             {
                 float currentLaunchTime = Time.time - timeLaunchStart;
-                if(currentLaunchTime > launchDuration)
+                if (currentLaunchTime > launchDuration)
                 {
                     startCooldown();
                 }
@@ -58,18 +60,18 @@ public class BallBehavior : MonoBehaviour
 
 
         //go to object attached to script, get the transform component, look at it's position
-        Vector2 currentPosition = gameObject.GetComponent<Transform>().position;    
+        Vector2 currentPosition = gameObject.GetComponent<Transform>().position;
         float distance = Vector2.Distance(targetPosition, currentPosition);
 
         if (distance > 0.1)
         {
             float currentSpeed;
 
-            if(launching == true)
+            if (launching == true)
             {
                 float launchingForHowLong = Time.time - timeLaunchStart;
 
-                if(launchingForHowLong > launchDuration)
+                if (launchingForHowLong > launchDuration)
                 {
                     startCooldown();
                 }
@@ -81,7 +83,7 @@ public class BallBehavior : MonoBehaviour
             {
                 currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, getDifficultyPercentage());
             }
-            
+
 
             //This line says how much time has passed since the last check, so that framerate doesn't make things run faster. deltaTime might be 0.2 with an fps of 50 and 0.1 with an fps of 100, so it's equalized.
             currentSpeed = currentSpeed * Time.deltaTime;
@@ -98,6 +100,11 @@ public class BallBehavior : MonoBehaviour
 
             targetPosition = getRandomPosition();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(this + " collided with: " + collision.gameObject.name);
     }
 
     Vector2 getRandomPosition()
