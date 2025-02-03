@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7798904286905172602}
   m_Layer: 0
   m_Name: ball-japan_0
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496044310954182788}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cb297fe0def9f64f93ebbc223cb08b7, type: 3}
   m_Name: 
@@ -142,6 +142,7 @@ MonoBehaviour:
   launchDuration: 2
   timeLastLaunch: 0
   timeLaunchStart: 0
+  rerouting: 0
 --- !u!50 &4501861537696785426
 Rigidbody2D:
   serializedVersion: 5
@@ -150,14 +151,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496044310954182788}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -168,7 +169,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &7798904286905172602
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 760115675}
   m_Layer: 0
   m_Name: Arena1Border_0
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,6 +1236,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c8b65ec2109d14dba5daa0139dd84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1338498007
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1690897682}
+    m_Modifications:
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.516001
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.516001
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 42.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.35919
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -67.35702
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3832.2004
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417257968138778051, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: m_Name
+      value: ball-columbia
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018765580220910601, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1261004661}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+--- !u!4 &1581744258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 528640664562255258, guid: f6eb5aa43cfa307419d8a6b352f8c73a, type: 3}
+  m_PrefabInstance: {fileID: 1338498007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1690897678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1408,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1581744258}
   - {fileID: 1783257230}
   - {fileID: 148023030}
   - {fileID: 1745041796}
@@ -1950,6 +2029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pin-choco_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7534266362510278438, guid: 389cf92e71a64a24ab93c60a049adc45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1967,17 +2050,25 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1261004661}
+    - target: {fileID: -3105392658578034354, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 496044310954182788, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
       propertyPath: m_Name
       value: ball-japan_0
       objectReference: {fileID: 0}
+    - target: {fileID: 496044310954182788, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
+      propertyPath: m_TagString
+      value: Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 4393568174111766749, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 4393568174111766749, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4393568174111766749, guid: 158d3c35bb8fd5942a355a911a68e12a, type: 3}
       propertyPath: m_LocalPosition.z
