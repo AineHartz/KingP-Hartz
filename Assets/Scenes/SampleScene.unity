@@ -1852,6 +1852,7 @@ GameObject:
   - component: {fileID: 1871818104}
   - component: {fileID: 1871818106}
   - component: {fileID: 1871818105}
+  - component: {fileID: 1871818107}
   m_Layer: 5
   m_Name: DashText
   m_TagString: Untagged
@@ -1931,7 +1932,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1977,6 +1978,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871818103}
   m_CullTransparentMesh: 1
+--- !u!114 &1871818107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871818103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b544b6b5eab6947adaf0b9974c9bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5215474088633522249
 PrefabInstance:
   m_ObjectHideFlags: 0
