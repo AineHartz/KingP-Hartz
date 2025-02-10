@@ -103,8 +103,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  normalSpeed: 4
   newPosition: {x: 0, y: 0}
   mousePosG: {x: 0, y: 0, z: 0}
+  dashing: 0
+  dashDuration: 1
+  timedashStart: 0
 --- !u!60 &5170054050076042209
 PolygonCollider2D:
   m_ObjectHideFlags: 0

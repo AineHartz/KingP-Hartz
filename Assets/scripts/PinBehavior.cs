@@ -69,6 +69,7 @@ public class PinBehavior : MonoBehaviour
         else
         {
             cooldown = cooldown - Time.deltaTime;
+
             if (Input.GetMouseButtonDown(0) == true && cooldown <= 0)
             {
                 dashing = true;
