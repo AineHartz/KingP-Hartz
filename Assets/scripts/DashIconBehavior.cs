@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEditor.Overlays;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DashIconBehavior : MonoBehaviour
 {
     TextMeshProUGUI text;
@@ -11,28 +11,34 @@ public class DashIconBehavior : MonoBehaviour
 
     void Start()
     {
-        Image[] images = GetComponentInChildren<Image>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
+
+        Image[] images = GetComponentsInChildren<Image>();
         for(int i = 0; i < images.Length; i++)
         {
-            if(images[i].tag == "overlay")
+            if(images[i].tag == "Overlay")
             {
                 overlay = images[i];
             }
         }
 
-        text = GetComponentInChildren<TextMeshProUGUI>();
         cooldownRate = PinBehavior.cooldownRate;
+        overlay.fillAmount = 0.0f;
     }
 
     void Update()
     {
         cooldown = PinBehavior.cooldown;
 
-        if(cooldown > 0)
+        string message = "";
+
+        if(cooldown > 0.0)
         {
             float fill = cooldown / cooldownRate;
-            text.text = string.Format("{0: 0.0}" + PinBehavior.cooldown);
+            message = string.Format("{0:0.0}", cooldown);
             overlay.fillAmount = fill;
         }
+
+        text.SetText(message);
     }
 }
