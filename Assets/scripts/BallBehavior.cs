@@ -4,10 +4,10 @@ public class BallBehavior : MonoBehaviour
 {
 
     //base movement variables
-    public float minX = -9.78f;
-    public float maxX = 9.8f;
-    public float minY = -4.2f;
-    public float maxY = 4.15f;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
     public float minSpeed;
     public float maxSpeed;
 
@@ -195,6 +195,19 @@ public class BallBehavior : MonoBehaviour
         {
             rerouting = true;
         }
+    }
+
+    public void setBounds(float miX, float maX, float miY, float maY)
+    {
+        minX = miX;
+        maxX = maX;
+        minY = maY;
+        maxY = miY;
+    }
+
+    public void setTarget(GameObject pin)
+    {
+        target = pin;
     }
 
 }
