@@ -48,7 +48,7 @@ public class PinBehavior : MonoBehaviour
         Debug.Log("Collided with " + collided);
         if (collided == "Ball")
         {
-            //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
 

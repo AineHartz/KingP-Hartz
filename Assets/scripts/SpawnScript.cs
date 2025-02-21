@@ -16,9 +16,12 @@ public class SpawnScript : MonoBehaviour
     public float minY = -3.29f;
     public float maxY = 2.95f;
 
+    public Pins pinsDB;
+
     private void Start()
     {
         spawnBall();
+        spawnPin();
     }
 
     private void Update()
@@ -52,5 +55,11 @@ public class SpawnScript : MonoBehaviour
     void setRatio()
     {
         spawnRatio = Random.Range(minSpawn, maxSpawn);
+    }
+
+    void spawnPin()
+    {
+        targetObject = Instantiate(pinsDB.getPin(CharecterManager.selection).prefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+
     }
 }
